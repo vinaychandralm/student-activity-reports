@@ -1,0 +1,15 @@
+<div class="container">
+    <h3>Inside Student Activity Details Report Page<h3>
+
+    <form role="form">
+        <div class="form-group">
+            <label class="" for="teacher-id">Select Courses:</label>
+
+            <div ng-dropdown-multiselect="" options="details.courses._get" selected-model="example3model" extra-settings="example3settings"></div>
+
+            <!-- <div ng-dropdown-multiselect="" options="details.courses._get" selected-model="example1model"></div> -->
+        </div>
+
+        <button type="submit" id="teacher-submit" class="btn" ng-disabled="disableSubmitBtn" ng-click="studActivityReports()" ng-class="{'btn-default': (disableSubmitBtn), 'btn-success': (!disableSubmitBtn)}">Search</button>
+    </form>
+</div>
