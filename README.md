@@ -7,6 +7,7 @@ Structure Details:
     root # root directory
         build
         src
+            index.html # Entry file
             js
                 app
                     Main AngularJs module and configuration file
@@ -33,4 +34,15 @@ Structure Details:
                 JS library dependencies
             img
                 Image files
-            index.html # Entry file
+
+        test # All test cases and specs goes here
+
+# Configuration Details
+
+1. Make sure Node.js is installed. If not install Node.js
+2. Make sure bower is installed.
+3. Open terminal in the root directory and run the following commands:
+    npm install
+    bower install
+4. For unit testing run in terminal:
+    karma start
