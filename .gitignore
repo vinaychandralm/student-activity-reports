@@ -1,2 +1,5 @@
-# Project files.
+#ignored files
+
+node_modules/
 bower_components/
+package-bckup.json
