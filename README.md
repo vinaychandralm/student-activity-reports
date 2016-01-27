@@ -38,7 +38,7 @@ Structure Details:
 
         test # All test cases and specs goes here
 
-# Configuration Details
+### Configuration Details
 
 1. Make sure Node.js is installed. If not install Node.js
 2. Make sure bower is installed.
