@@ -21,6 +21,7 @@ Structure Details:
                     service files
                 constants
                 data
+                    local data storage (should be used for development purpose only)
                 factories
                 partials
                     partial templates
@@ -44,5 +45,6 @@ Structure Details:
 3. Open terminal in the root directory and run the following commands:
     npm install
     bower install
+    npm i -g karma-cli
 4. For unit testing run in terminal:
     karma start
