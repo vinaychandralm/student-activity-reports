@@ -6,8 +6,6 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
 
     console.log("Inside MainCtrl");
 
-    // $rootScope.page_title = 'About Me';
-
     $scope.teacherId = "";
     $scope.disableSubmitBtn = true;
     $scope.teacherArr = [
@@ -41,8 +39,6 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
         }
     ];
 
-
-
     $scope.multiselectModel2 = [];
 
     $scope.selectOptionsObjects2 = [
@@ -67,8 +63,6 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
             name: "SINET: Biology A (Flex)"
         }
     ];
-
-
 
     $scope.selectedTeacher = {"teacher_name": "--Select--"};
 
