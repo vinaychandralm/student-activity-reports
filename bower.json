@@ -22,6 +22,7 @@
     "angular-route": "~1.4.9",
     "angular-sanitize": "~1.4.9",
     "angular-mocks": "~1.4.9",
-    "angular-touch": "~1.4.9"
+    "angular-touch": "~1.4.9",
+    "angular-bootstrap-multiselect": "~0.3.5"
   }
 }

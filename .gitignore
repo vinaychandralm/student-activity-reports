@@ -1,5 +1,5 @@
 #ignored files
 
 node_modules/
-bower_components/
+src/lib/
 package-bckup.json

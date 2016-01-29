@@ -1,24 +1,32 @@
 <div class="container">
     <h3>Default Home Page</h3>
 
-    <form role="form">
-        <div class="form-group">
-            <label class="" for="teacher-id">Select Teacher:</label>
-            <!-- <input type="text" class="form-control" id="teacher-id" value="" ng-model="teacherId" ng-change="validateInput(teacherId)"> -->
 
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="drp-selected">{{selectedTeacher.teacher_name}}</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li ng-click="drpDownSelect(teacher)" ng-repeat="teacher in teacherArr | orderBy: 'teacher_name' track by teacher.teacher_id"><a>{{teacher.teacher_name}}</a></li>
-                </ul>
-            </div>
+    <div class="row">
+        <div class="col-sm-2"><label class="" for="teacher-id">Course(s):</label></div>
+        <div class="col-sm-10">
+            <multiselect
+                ng-model="multiselectModel"
+                options="c.name for c in selectOptionsObjects"
+                data-multiple="true">
+            </multiselect>
         </div>
-
-        <button type="submit" id="teacher-submit" class="btn" ng-disabled="disableSubmitBtn" ng-click="studActivityReports()" ng-class="{'btn-default': (disableSubmitBtn), 'btn-success': (!disableSubmitBtn)}">Search</button>
-    </form>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"><label class="" for="teacher-id">Course(s):</label></div>
+        <div class="col-sm-10">
+            <multiselect
+                ng-model="multiselectModel2"
+                options="c.name for c in selectOptionsObjects2"
+                data-multiple="true">
+            </multiselect>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="submit" id="teacher-submit" class="btn" ng-disabled="disableSubmitBtn" ng-click="studActivityReports()" ng-class="{'btn-default': (disableSubmitBtn), 'btn-success': (!disableSubmitBtn)}">Search</button>
+        </div>
+    </div>
 
 
 </div>

@@ -15,6 +15,61 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
         {"teacher_name": "B. Test Teacher", "teacher_id": "B12345"},
         {"teacher_name": "C. Test Teacher", "teacher_id": "C12345"}
     ];
+
+    $scope.multiselectModel = [];
+
+    $scope.selectOptionsObjects = [
+        {
+            id: 0,
+            name: "All Courses"
+        },
+        {
+            id: 1,
+            name: "Grade 2 Language Arts"
+        },
+        {
+            id: 2,
+            name: "Grade 5 Mathematics"
+        },
+        {
+            id: 3,
+            name: "Grade 10 Integrated Math"
+        },
+        {
+            id: 4,
+            name: "SINET: Biology A (Flex)"
+        }
+    ];
+
+
+
+    $scope.multiselectModel2 = [];
+
+    $scope.selectOptionsObjects2 = [
+        {
+            id: 0,
+            name: "All Courses"
+        },
+        {
+            id: 1,
+            name: "Grade 2 Language Arts"
+        },
+        {
+            id: 2,
+            name: "Grade 5 Mathematics"
+        },
+        {
+            id: 3,
+            name: "Grade 10 Integrated Math"
+        },
+        {
+            id: 4,
+            name: "SINET: Biology A (Flex)"
+        }
+    ];
+
+
+
     $scope.selectedTeacher = {"teacher_name": "--Select--"};
 
     $scope.validateInput = function(val) {
@@ -40,4 +95,12 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
         $scope.selectedTeacher = data;
         $scope.disableSubmitBtn = false;
     }
+
+    $scope.$watch('multiselectModel', function() {
+        console.log($scope.multiselectModel);
+    }, true);
+
+    $scope.$watch('multiselectModel2', function() {
+        console.log($scope.multiselectModel2);
+    }, true);
 }]);

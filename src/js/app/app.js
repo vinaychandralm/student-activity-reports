@@ -5,6 +5,7 @@ var app = angular.module('studentActivityReports', [
     // 'ngAnimate',
     'ngSanitize',
     'ngResource',
+    'ui.multiselect',
     // 'angularjs-dropdown-multiselect',
     'studentActivityReports.routing',
     'studentActivityReports.factories',
