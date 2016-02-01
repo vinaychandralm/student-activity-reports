@@ -4,7 +4,7 @@ var homeModule = angular.module('studentActivityReports.home', []);
 
 homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
 
-    console.log("Inside MainCtrl");
+    // console.log("Inside MainCtrl");
 
     $scope.teacherId = "";
     $scope.disableSubmitBtn = true;
@@ -14,27 +14,50 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
         {"teacher_name": "C. Test Teacher", "teacher_id": "C12345"}
     ];
 
+    $scope.extDataArr = ["checkAll", "uncheckAll"];
+
+    $scope.extData = $scope.extDataArr.join(",");
+
     $scope.multiselectModel = [];
+
+    // $scope.selectOptionsObjects = [
+    //     {
+    //         id: 0,
+    //         name: "All Courses"
+    //     },
+    //     {
+    //         id: 1,
+    //         name: "Grade 2 Language Arts"
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "Grade 5 Mathematics"
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "Grade 10 Integrated Math"
+    //     },
+    //     {
+    //         id: 4,
+    //         name: "SINET: Biology A (Flex)"
+    //     }
+    // ];
 
     $scope.selectOptionsObjects = [
         {
             id: 0,
-            name: "All Courses"
-        },
-        {
-            id: 1,
             name: "Grade 2 Language Arts"
         },
         {
-            id: 2,
+            id: 1,
             name: "Grade 5 Mathematics"
         },
         {
-            id: 3,
+            id: 2,
             name: "Grade 10 Integrated Math"
         },
         {
-            id: 4,
+            id: 3,
             name: "SINET: Biology A (Flex)"
         }
     ];
@@ -91,10 +114,10 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
     }
 
     $scope.$watch('multiselectModel', function() {
-        console.log($scope.multiselectModel);
+        // console.log($scope.multiselectModel);
     }, true);
 
     $scope.$watch('multiselectModel2', function() {
-        console.log($scope.multiselectModel2);
+        // console.log($scope.multiselectModel2);
     }, true);
 }]);
