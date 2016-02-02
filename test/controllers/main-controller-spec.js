@@ -50,29 +50,53 @@
 //   });
 
 
-describe("test suite example", function() {
-    var a;
-    var std;
+// describe("test suite example", function() {
+//
+//     describe("test suite example2", function() {
+//
+//         var foo = function(x, callBack) {
+//             if (x) {
+//                 callBack();
+//             }
+//         };
+//
+//         it("should not call the callBack", function() {
+//             foo(false, function() {
+//                 fail("Callback has been called");
+//             });
+//         });
+//
+//     });
+//
+// });
 
-    // var std = new Student("WBUT College Library");
+
+describe("A spy", function() {
+    var foo, bar = null;
 
     beforeEach(function() {
-        std = new Student("WBUT College Library");
+        foo = {
+            setBar: function(value) {
+                bar = value;
+            }
+        };
 
-        std.setVal();
+        spyOn(foo, 'setBar');
 
-        // spyOn(foo, "getBar").and.returnValue(745);
-
-        // foo.setBar(123);
-        // fetchedBar = foo.getBar();
+        foo.setBar(123);
+        foo.setBar(456, 'another param');
     });
 
-    it("Set Library name", function() {
-        expect(std.whichLibrary).toBe("WBUT College Library");
+    it("tracks that the spy was called", function() {
+        expect(foo.setBar).toHaveBeenCalled();
     });
 
-    it("Set Library name", function() {
-        expect(std.whichLibrary).toBe("National Library");
+    it("tracks all the arguments of its calls", function() {
+        expect(foo.setBar).toHaveBeenCalledWith(123);
+        expect(foo.setBar).toHaveBeenCalledWith(456, 'another param');
     });
 
+    it("stops all execution on a function", function() {
+        expect(bar).toBeNull();
+    });
 });
