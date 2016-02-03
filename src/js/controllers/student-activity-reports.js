@@ -25,4 +25,11 @@ sarModule.controller('studentDetailsCtrl', ['$scope','$routeParams', 'getData', 
 
     getData._get($scope.teacherId).success(handleSuccess).error(handleError);
 
+    $(".date-picker").datepicker();
+
+    $(".date-picker").on("change", function () {
+        var id = $(this).attr("id");
+        var val = $("label[for='" + id + "']").text();
+        $("#msg").text(val + " changed");
+    });
 }]);

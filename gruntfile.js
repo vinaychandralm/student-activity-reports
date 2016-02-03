@@ -1,15 +1,36 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-
-        karma: {
-            unit: {
-                configFile: 'karma.conf.js'
-            }
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: ['src/js/**/*.js'],
+        dest: 'build/<%= pkg.name %>.js'
+      }
+    },
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          'build/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
         }
-    });
+      }
+    },
+    watch: {
+      files: ['src/js/**/*.js'],
+      tasks: ['default']
+    }
+  });
 
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.registerTask('default', ['karma']);
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+
+  grunt.registerTask('default', ['concat', 'uglify']);
+
 };

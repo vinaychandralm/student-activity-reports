@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Improvement Network</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body style="background:#fff;">
+  	<div class="container">
+    	<div class="col-md-12 student-form">
+        	<div class="row form-group">
+            	<div class="col-md-12">
+                	<h2 class="title">Admin Activity Details Report</h2>
+                </div>
+            </div>
+            <div class="row form-group">
+            	<div class="col-md-2">
+                	<p>School(s)</p>
+                </div>
+                <div class="col-md-6">
+                	<select class="form-control">
+                        <option selected>All</option>
+                        <option>Weber School District [weber-isd]</option>
+                        <option>Weber Innovations High School [weber-wic]</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="row form-group">
+            	<div class="col-md-2">
+                	<p>Student(s)</p>
+                </div>
+                <div class="col-md-6">
+                	<select class="form-control">
+                        <option selected>All Students</option>
+                        <option>Janet Young</option>
+                        <option>Katie Lopez</option>
+                        <option>Luke Mikelson</option>
+                        <option>Megan Ronaldo</option>
+                    </select> 
+                </div>
+            </div>
+        	<div class="row form-group">
+            	<div class="col-md-2">
+                	<p>Course(s):</p>
+                </div>
+                <div class="col-md-6">
+                	<select class="form-control">
+                        <option selected>All Courses</option>
+                        <option>Grade 2 Language Arts</option>
+                        <option>Grade 5 Mathematics</option>
+                        <option>Grade 10 Integrated Math</option>
+                        <option>SINET: Biology A (Flex)</option>
+                    </select> 
+                </div>
+            </div>
+            
+            <div class="row form-group">
+            	<div class="col-md-2">
+                	<p>Enrollment Status:</p>
+                </div>
+                <div class="col-md-6">
+                	<select class="form-control">
+                        <option selected>All</option>
+                        <option>Active</option>
+                        <option>Withdrawn</option>
+                        <option>WithdrawnFailed</option>
+                        <option>Transferred</option>
+                        <option>Completed</option>
+                        <option>CompletedNoCredit</option>
+                        <option>Suspended</option>
+                        <option>Inactive</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="row form-group">
+            	<div class="col-md-2">
+                	<p>Activity Start Date:</p>
+                </div>
+                <div class="col-md-2">
+                	<div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                        <input class="form-control" type="text"  />
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row form-group">
+            	<div class="col-md-2">
+                	<p>Activity End Date:</p>
+                </div>
+                <div class="col-md-2">
+                    <div id="datepicker2" class="input-group date" data-date-format="mm-dd-yyyy">
+                        <input class="form-control" type="text"  />
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row form-group">
+            	<div class="col-md-2">
+                	<p>Minimum number of minutes in activity</p>
+                </div>
+                <div class="col-md-6">
+                	<input type="text" class="form-control">
+                </div>
+            </div>
+            
+            <div class="row form-submit">
+                <div class="col-md-12">
+                	 <button type="submit" class="btn pull-right">OK</button>
+                     <button type="submit" class="btn pull-right disabled">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script src="js/libs/bootstrap-datepicker.js"></script>  
+	<script>
+	$(function () {
+	  $("#datepicker").datepicker({ 
+			autoclose: true, 
+			todayHighlight: true
+	  }).datepicker('update', new Date());;
+	  $("#datepicker2").datepicker({ 
+			autoclose: true, 
+			todayHighlight: true
+	  }).datepicker('update', new Date());;
+	});
+	</script>
+  </body>
+</html>

@@ -6,7 +6,7 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
 
     // console.log("Inside MainCtrl");
 
-    $scope.teacherId = "";
+    $scope.teacherId = "12345";
     $scope.disableSubmitBtn = true;
     $scope.teacherArr = [
         {"teacher_name": "A. Test Teacher", "teacher_id": "A12345"},
@@ -120,4 +120,8 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
     $scope.$watch('multiselectModel2', function() {
         // console.log($scope.multiselectModel2);
     }, true);
+
+    $scope.openForm = function() {
+        $location.path("/student-activity-reports/A12345");
+    }
 }]);
