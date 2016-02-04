@@ -7,6 +7,7 @@ var app = angular.module('studentActivityReports', [
     'ngResource',
     'ui.multiselect',
     // 'angularjs-dropdown-multiselect',
+    'mgcrea.ngStrap.datepicker',
     'studentActivityReports.routing',
     'studentActivityReports.factories',
     'studentActivityReports.home',

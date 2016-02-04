@@ -14,6 +14,9 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
         {"teacher_name": "C. Test Teacher", "teacher_id": "C12345"}
     ];
 
+    $rootScope.isblue = true;
+    console.log($rootScope.isblue);
+
     $scope.extDataArr = ["checkAll", "uncheckAll"];
 
     $scope.extData = $scope.extDataArr.join(",");
@@ -124,4 +127,8 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
     $scope.openForm = function() {
         $location.path("/student-activity-reports/A12345");
     }
+
+    $scope.go = function ( path ) {
+        $location.path( path );
+    };
 }]);

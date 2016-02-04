@@ -1,5 +1,5 @@
 body{
-    background:#62ccfe;
+    /*background:#62ccfe;*/
 }
 .row-content{
     /*width: 872px;
@@ -82,6 +82,36 @@ body{
 .student-form .date .input-group-addon{
     background:inherit;
 }
+
+/* Alert */
+
+.field-alert {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* End Alert */
+
+/* Colors */
+
+.sky-blue {
+    background:#62ccfe;
+}
+
+/* End colors */
+
+
+/* Multiselect Dropdown */
+multiselect,
+multiselect .btn-group,
+multiselect .btn-group .btn,
+multiselect .btn-group ul {
+    width: 100%;
+
+}
+/* End Multiselect Dropdown */
+
 @media only screen and (max-width: 900px) {
     .row-content .block {
         width: 40%;

@@ -2,22 +2,54 @@
 
 var sarModule = angular.module('studentActivityReports.studentDetails', []);
 
-sarModule.controller('studentDetailsCtrl', ['$scope','$routeParams', 'getData', function($scope, $routeParams, getData) {
+sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams', 'getData', function($scope, $rootScope, $routeParams, getData) {
 
-    console.log("Inside studentDetailsCtrl");
+    console.dir("**Inside studentDetailsCtrl**");
 
     $scope.teacherId = $routeParams.teacherId;
-    // console.log($scope.teacherId);
     $scope.details = {};
 
-    $scope.example3settings = {displayProp: 'label', idProp: 'label'};
-    $scope.example1model = [];
+    $rootScope.isblue = false;
 
+    /*
+    * @startDate: holds the start date.
+    * Acceptable date formats: mm-dd-yyyy, mm-dd-yy, ISO formatated string, miliseconds
+    */
+    $scope.startDate = "04-02-2016";
+
+    /*
+    * @endDate: holds the start date.
+    * Acceptable date formats: mm-dd-yyyy, mm-dd-yy, ISO formatated string, miliseconds
+    */
+    $scope.endDate = "04-02-2016";
+
+
+    $scope.selectOptionsObjects = [
+        {
+            id: 0,
+            name: "Grade 2 Language Arts"
+        },
+        {
+            id: 1,
+            name: "Grade 5 Mathematics"
+        },
+        {
+            id: 2,
+            name: "Grade 10 Integrated Math"
+        },
+        {
+            id: 3,
+            name: "SINET: Biology A (Flex)"
+        }
+    ];
+
+    // Success callback
     var handleSuccess = function(data, status) {
         $scope.details = data;
         console.log(status, $scope.details.courses._get);
     };
 
+    // Error callback
     var handleError = function(err, status) {
         $scope.details = {};
         console.log(status, err);
@@ -25,11 +57,7 @@ sarModule.controller('studentDetailsCtrl', ['$scope','$routeParams', 'getData', 
 
     getData._get($scope.teacherId).success(handleSuccess).error(handleError);
 
-    $(".date-picker").datepicker();
-
-    $(".date-picker").on("change", function () {
-        var id = $(this).attr("id");
-        var val = $("label[for='" + id + "']").text();
-        $("#msg").text(val + " changed");
-    });
+    $scope.$watch('selectedDate', function() {
+        console.log($scope.selectedDate);
+    }, true);
 }]);
