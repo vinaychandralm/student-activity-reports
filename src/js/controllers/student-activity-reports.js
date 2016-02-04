@@ -2,7 +2,7 @@
 
 var sarModule = angular.module('studentActivityReports.studentDetails', []);
 
-sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams', 'getData', function($scope, $rootScope, $routeParams, getData) {
+sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams', 'getData', 'getEnrollmentStatus', function($scope, $rootScope, $routeParams, getData, getEnrollmentStatus) {
 
     console.dir("**Inside studentDetailsCtrl**");
 
@@ -23,7 +23,10 @@ sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams
     */
     $scope.endDate = "04-02-2016";
 
-
+    /*
+    * @courseArr: Courses received from server
+    * TODO:: modify object structure as per data received.
+    */
     $scope.courseArr = [
         {
             id: 0,
@@ -42,6 +45,11 @@ sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams
             name: "SINET: Biology A (Flex)"
         }
     ];
+
+    /*
+    * @enrollmentArr: Enrollment array
+    */
+    $scope.enrollmentArr = getEnrollmentStatus.get();
 
     // Success callback
     var handleSuccess = function(data, status) {

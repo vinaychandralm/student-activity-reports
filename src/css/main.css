@@ -110,6 +110,11 @@ multiselect .btn-group ul {
     width: 100%;
 
 }
+
+.checkbox input[type=checkbox] {
+    cursor: pointer;
+}
+
 /* End Multiselect Dropdown */
 
 @media only screen and (max-width: 900px) {

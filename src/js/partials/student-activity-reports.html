@@ -1,5 +1,4 @@
 <div class="container">
-    <!-- <input type="text" class="form-control" ng-model="selectedDate" name="date" bs-datepicker> -->
   <div class="col-md-12 student-form">
       <div class="row form-group">
           <div class="col-md-12">
@@ -11,13 +10,6 @@
               <p>Course(s):<span class="field-alert">*</span></p>
           </div>
           <div class="col-md-6">
-              <!-- <select class="form-control">
-                  <option selected>All Courses</option>
-                  <option>Grade 2 Language Arts</option>
-                  <option>Grade 5 Mathematics</option>
-                  <option>Grade 10 Integrated Math</option>
-                  <option>SINET: Biology A (Flex)</option>
-              </select> -->
 
               <multiselect
                   ng-model="multiselectModel"
@@ -34,17 +26,14 @@
               <p>Enrollment Status:</p>
           </div>
           <div class="col-md-6">
-              <select class="form-control">
-                  <option selected>All</option>
-                  <option>Active</option>
-                  <option>Withdrawn</option>
-                  <option>WithdrawnFailed</option>
-                  <option>Transferred</option>
-                  <option>Completed</option>
-                  <option>CompletedNoCredit</option>
-                  <option>Suspended</option>
-                  <option>Inactive</option>
-              </select>
+
+              <multiselect
+                  ng-model="multiselectModel"
+                  options="c.name for c in enrollmentArr"
+                  data-multiple="true"
+                  data-checkall="All">
+              </multiselect>
+
               <span class="field-alert">please select Enrollment Status.</span>
           </div>
       </div>

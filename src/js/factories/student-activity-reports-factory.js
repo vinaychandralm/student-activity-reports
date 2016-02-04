@@ -11,3 +11,47 @@ factoryModule.factory('getData', function($http) {
         }
     };
 });
+
+factoryModule.factory('getEnrollmentStatus', function($http) {
+
+    var service = {};
+
+    service.get = function() {
+        return [
+            {
+                id: 0,
+                name: "Active"
+            },
+            {
+                id: 1,
+                name: "Withdrawn"
+            },
+            {
+                id: 2,
+                name: "WithdrawnFailed"
+            },
+            {
+                id: 3,
+                name: "Transferred"
+            },
+            {
+                id: 4,
+                name: "Completed"
+            },
+            {
+                id: 5,
+                name: "CompletedNoCredit"
+            },
+            {
+                id: 6,
+                name: "Suspended"
+            },
+            {
+                id: 7,
+                name: "Inactive"
+            }
+        ];
+    }
+
+    return service;
+});
