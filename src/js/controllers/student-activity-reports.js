@@ -24,7 +24,7 @@ sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams
     $scope.endDate = "04-02-2016";
 
 
-    $scope.selectOptionsObjects = [
+    $scope.courseArr = [
         {
             id: 0,
             name: "Grade 2 Language Arts"
