@@ -52,7 +52,7 @@ factoryModule.factory('getEnrollmentStatus', function($http) {
                 name: "Inactive"
             }
         ];
-    }
+    };
 
     return service;
 });

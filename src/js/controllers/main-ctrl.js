@@ -124,4 +124,10 @@ homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function
     $scope.openForm = function() {
         $location.path("/student-activity-reports/A12345");
     }
+    $scope.openForm1 = function() {
+        $location.path("/student-form/A12345");
+    }
+    $scope.openForm2 = function() {
+        $location.path("/admin-form/A12345");
+    }
 }]);
