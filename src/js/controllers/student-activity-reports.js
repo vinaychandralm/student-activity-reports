@@ -1,5 +1,4 @@
 'use strict'
-
 var sarModule = angular.module('studentActivityReports.studentDetails', []);
 
 sarModule.controller('studentDetailsCtrl', ['$scope','$routeParams', 'getData', function($scope, $routeParams, getData) {
