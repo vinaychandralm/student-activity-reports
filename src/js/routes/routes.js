@@ -13,6 +13,16 @@ routingModule.provider('routeInfo', function() {
                     route: '/student-activity-reports/:teacherId',
                     templateUrl: 'js/partials/student-activity-reports.html',
                     controller: 'studentDetailsCtrl'
+                },
+                {
+                    route: '/teacher-form/:teacherId',
+                    templateUrl: 'js/partials/teacher-form.html',
+                    controller: 'studentDetailsCtrl'
+                },
+                {
+                    route: '/admin-form/:teacherId',
+                    templateUrl: 'js/partials/admin-form.html',
+                    controller: 'studentDetailsCtrl'
                 }
             ];
         },
