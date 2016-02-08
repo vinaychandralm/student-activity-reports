@@ -8,7 +8,7 @@ sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams
 
     $scope.teacherId = $routeParams.teacherId;
     $scope.details = {};
-
+    console.log("a");
     $rootScope.isblue = false;
 
     /*
