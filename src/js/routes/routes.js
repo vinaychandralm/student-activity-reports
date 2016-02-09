@@ -15,14 +15,15 @@ routingModule.provider('routeInfo', function() {
                     controller: 'studentDetailsCtrl'
                 },
                 {
-                    route: '/student-form/:studentId',
-                    templateUrl: 'js/partials/student-form.html',
-                    controller: 'studentDetailsCtrl1'
+
+                    route: '/teacher-form/:teacherId',
+                    templateUrl: 'js/partials/teacher-form.html',
+                    controller: 'studentDetailsCtrl'
                 },
                 {
-                    route: '/admin-form/:adminId',
+                    route: '/admin-form/:teacherId',
                     templateUrl: 'js/partials/admin-form.html',
-                    controller: 'studentDetailsCtrl2'
+                    controller: 'studentDetailsCtrl'
                 }
             ];
         },

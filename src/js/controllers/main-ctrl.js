@@ -1,133 +1,44 @@
 'use strict'
+var constantModule = angular.module('constant', []);
 
-var homeModule = angular.module('studentActivityReports.home', []);
+constantModule.constant('$theme',{
+   "theme":"black"
+});
 
-homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
+var homeModule = angular.module('studentActivityReports.home', ['constant']);
 
-    // console.log("Inside MainCtrl");
+
+homeModule.controller('MainCtrl', ['$scope', '$rootScope', '$location','$theme', function($scope, $rootScope, $location,theme) {
+
+    console.dir("Inside MainCtrl");
+    console.log(theme.theme);
+    $rootScope.isblue = true;
 
     $scope.teacherId = "12345";
-    $scope.disableSubmitBtn = true;
-    $scope.teacherArr = [
-        {"teacher_name": "A. Test Teacher", "teacher_id": "A12345"},
-        {"teacher_name": "B. Test Teacher", "teacher_id": "B12345"},
-        {"teacher_name": "C. Test Teacher", "teacher_id": "C12345"}
-    ];
-
     $scope.extDataArr = ["checkAll", "uncheckAll"];
-
     $scope.extData = $scope.extDataArr.join(",");
+    
+    $scope.roles={
+        "student":[{"text":"Progress Report"},{"text":"Student Activity Report"}],
+        "teacher":[{"text":"Course Completion Report"},{"text":"Student Activity Report"}],
+        "admin":[{"text":"Progress Report"},{"text":"Course Completion Report"},{"text":"Student Activity Report"}]
+    };
+    
+    console.log($scope.roles);
 
-    $scope.multiselectModel = [];
-
-    // $scope.selectOptionsObjects = [
-    //     {
-    //         id: 0,
-    //         name: "All Courses"
-    //     },
-    //     {
-    //         id: 1,
-    //         name: "Grade 2 Language Arts"
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "Grade 5 Mathematics"
-    //     },
-    //     {
-    //         id: 3,
-    //         name: "Grade 10 Integrated Math"
-    //     },
-    //     {
-    //         id: 4,
-    //         name: "SINET: Biology A (Flex)"
-    //     }
-    // ];
-
-    $scope.selectOptionsObjects = [
-        {
-            id: 0,
-            name: "Grade 2 Language Arts"
-        },
-        {
-            id: 1,
-            name: "Grade 5 Mathematics"
-        },
-        {
-            id: 2,
-            name: "Grade 10 Integrated Math"
-        },
-        {
-            id: 3,
-            name: "SINET: Biology A (Flex)"
-        }
-    ];
-
-    $scope.multiselectModel2 = [];
-
-    $scope.selectOptionsObjects2 = [
-        {
-            id: 0,
-            name: "All Courses"
-        },
-        {
-            id: 1,
-            name: "Grade 2 Language Arts"
-        },
-        {
-            id: 2,
-            name: "Grade 5 Mathematics"
-        },
-        {
-            id: 3,
-            name: "Grade 10 Integrated Math"
-        },
-        {
-            id: 4,
-            name: "SINET: Biology A (Flex)"
-        }
-    ];
-
-    $scope.selectedTeacher = {"teacher_name": "--Select--"};
-
-    $scope.validateInput = function(val) {
-
-        if($scope.teacherId && $scope.teacherId!=="") {
-
-            $scope.disableSubmitBtn = false;
-        } else {
-            $scope.disableSubmitBtn = true;
-        }
-    }
-
-    $scope.studActivityReports = function() {
-        console.log("Redirecting to student activity reports page...");
-        if($scope.selectedTeacher && $scope.selectedTeacher.teacher_id) {
-
-            $location.path("/student-activity-reports/" + $scope.selectedTeacher.teacher_id);
-        }
-    }
-
-    $scope.drpDownSelect = function(data) {
-
-        $scope.selectedTeacher = data;
-        $scope.disableSubmitBtn = false;
-    }
-
-    $scope.$watch('multiselectModel', function() {
-        // console.log($scope.multiselectModel);
-    }, true);
-
-    $scope.$watch('multiselectModel2', function() {
-        // console.log($scope.multiselectModel2);
-    }, true);
-
-    $scope.openForm = function() {
-        $location.path("/student-activity-reports/A12345");
-    }
-    $scope.openForm1 = function() {
-        $location.path("/student-form/A12345");
-    }
     $scope.openForm2 = function() {
+        $location.path("/student-activity-reports/A12345");
+
+    };
+    $scope.openForm1 = function() {
+        $location.path("/teacher-form/A12345");
+    };
+    $scope.openForm = function() {
         $location.path("/admin-form/A12345");
-    }
+    };
+
+    $scope.go = function ( path ) {
+        $location.path( path );
+    };
+
 }]);

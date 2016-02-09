@@ -5,3 +5,5 @@ src/lib/
 package-bckup.json
 npm-debug.log
 test
+.idea
+
