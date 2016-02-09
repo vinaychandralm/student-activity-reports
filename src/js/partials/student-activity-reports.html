@@ -17,7 +17,7 @@
                   data-multiple="true"
                   data-checkall="All Courses">
               </multiselect>
-              <span class="field-alert">please select atleast one course.</span>
+              <span class="field-alert" ng-show='courseNotSelected'>please select atleast one course.</span>
           </div>
       </div>
 
@@ -34,7 +34,7 @@
                   data-checkall="All">
               </multiselect>
 
-              <span class="field-alert">please select Enrollment Status.</span>
+              <span class="field-alert" ng-show='enrllNotSelected'>please select Enrollment Status.</span>
           </div>
       </div>
       <div class="row form-group">
@@ -48,7 +48,7 @@
                   <!-- <input class="form-control" type="text"  /> -->
                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
-              <span class="field-alert">Please select.</span>
+              <span class="field-alert" ng-show='srtDateNotSelected'>Please select.</span>
           </div>
       </div>
 
@@ -63,7 +63,7 @@
                   <input type="text" class="" ng-model="endDate" name="date" bs-datepicker>
                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
-              <span class="field-alert">Please select.</span>
+              <span class="field-alert" ng-show='endDateNotSelected'>Please select.</span>
           </div>
       </div>
 
@@ -86,7 +86,7 @@
 
       <div class="row form-submit">
           <div class="col-md-12">
-               <button type="submit" class="btn pull-right">OK</button>
+               <button type="submit" class="btn pull-right" ng-click="submit()">OK</button>
                <button type="submit" class="btn pull-right disabled">Cancel</button>
           </div>
       </div>

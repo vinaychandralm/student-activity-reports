@@ -1,7 +1,6 @@
 'use strict'
 
 var sarModule = angular.module('studentActivityReports.studentDetails', []);
-
 sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams', 'getData', 'getEnrollmentStatus', function($scope, $rootScope, $routeParams, getData, getEnrollmentStatus) {
 
     console.dir("**Inside studentDetailsCtrl**");
@@ -10,6 +9,10 @@ sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams
     $scope.details = {};
     console.log("a");
     $rootScope.isblue = false;
+    $scope.courseNotSelected=false;
+    $scope.enrllNotSelected=false;
+    $scope.srtDateNotSelected=false;
+    $scope.endDateNotSelected=false;
 
     /*
     * @startDate: holds the start date.
@@ -50,6 +53,9 @@ sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams
     * @enrollmentArr: Enrollment array
     */
     $scope.enrollmentArr = getEnrollmentStatus.get();
+    $scope.submit=function(){
+        
+    };
 
     // Success callback
     var handleSuccess = function(data, status) {
@@ -68,4 +74,5 @@ sarModule.controller('studentDetailsCtrl', ['$scope', '$rootScope','$routeParams
     $scope.$watch('selectedDate', function() {
         console.log($scope.selectedDate);
     }, true);
+    
 }]);
